@@ -1,0 +1,13 @@
+# Secrets & auth tokens
+.env
+.cache
+*.cache
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
