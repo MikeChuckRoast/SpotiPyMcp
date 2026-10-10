@@ -70,14 +70,20 @@ def format_track(item: dict) -> dict:
         return {}
     artists = ", ".join(a["name"] for a in item.get("artists", []))
     album = item.get("album", {}) or {}
+    external_ids = item.get("external_ids", {}) or {}
     return {
         "name": item.get("name"),
         "artists": artists,
         "album": album.get("name"),
+        "album_release_date": album.get("release_date"),
+        "album_images": album.get("images"),
         "uri": item.get("uri"),
         "id": item.get("id"),
         "duration_ms": item.get("duration_ms"),
         "explicit": item.get("explicit"),
+        "track_number": item.get("track_number"),
+        "disc_number": item.get("disc_number"),
+        "isrc": external_ids.get("isrc"),
         "url": (item.get("external_urls") or {}).get("spotify"),
     }
 
@@ -89,9 +95,12 @@ def format_playlist(item: dict) -> dict:
         "name": item.get("name"),
         "id": item.get("id"),
         "owner": (item.get("owner") or {}).get("display_name"),
+        "description": item.get("description"),
         "public": item.get("public"),
         "collaborative": item.get("collaborative"),
         "track_count": (item.get("tracks") or {}).get("total"),
+        "followers": (item.get("followers") or {}).get("total"),
+        "images": item.get("images"),
         "url": (item.get("external_urls") or {}).get("spotify"),
     }
 
