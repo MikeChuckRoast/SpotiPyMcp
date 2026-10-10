@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "spotipymcp": {
+      "command": "C:\\Users\\mike\\Documents\\Code Projects\\SpotiPyMcp\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\Users\\mike\\Documents\\Code Projects\\SpotiPyMcp\\server.py"]
+    }
+  }
+}
