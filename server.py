@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import Optional
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 from spotify_client import (
     format_artist,
@@ -17,7 +17,7 @@ from spotify_client import (
     get_client,
 )
 
-mcp = FastMCP("SpotiPyMcp")
+mcp = MCPServer("SpotiPyMcp")
 
 
 # ----------------------------------------------------------------------------
